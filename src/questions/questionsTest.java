@@ -51,5 +51,10 @@ public class questionsTest {
 		assertArrayEquals(output, qSolver.everyPossiblePairingOfStudents(input));
 	}
 	
-	
+	@Test
+	public void allElementsExceptFirst3() {
+		Integer[] input = {1, 2, 3, 4, 5, 6, 7};
+		Integer[] output = {4, 5, 6, 7};
+		assertArrayEquals(output, qSolver.allElementsExceptFirst3(input));
+	}
 }

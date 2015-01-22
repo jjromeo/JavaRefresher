@@ -155,4 +155,18 @@ public class QuestionSolver {
 		output = listOfArrays.toArray(output);
 		return output;
 	}
+
+	public Object[] allElementsExceptFirst3(Integer[] input) {
+		ArrayList<Integer> numbers = new ArrayList<Integer>();
+		for(int i = 0; i < input.length; i++)
+		{
+			if (i > 2) {
+				numbers.add(input[i]);
+			}
+		}
+		Integer[] output = new Integer[numbers.size()];
+		output = numbers.toArray(output);
+		
+		return output;
+	}
 }
