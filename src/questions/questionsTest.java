@@ -8,9 +8,9 @@ import org.junit.Test;
 
 public class questionsTest {
 
+	private static QuestionSolver qSolver = new QuestionSolver();
 	@Test
 	public void selectElementsStartingWithA() {
-		QuestionSolver qSolver = new QuestionSolver();
 		String[] input = {"bananas", "apples", "pears", "avocados"};
 		String[] output = {"apples", "avocados"};
 		assertArrayEquals(output, qSolver.selectElementsStartingWithA(input));
@@ -18,11 +18,17 @@ public class questionsTest {
 
 	@Test
 	public void selectElementsStartingWithVowel() {
-		QuestionSolver qSolver = new QuestionSolver();
 		String[] input = {"john", "david", "omar", "fred", "idris", "angela"};
 		String[] output = {"omar", "idris", "angela"};
 		assertArrayEquals(output, qSolver.selectElementsStartingWithVowel(input));
 	}	
 
+	@Test
+	public void removeNullsFromArray() {
+		Object[] input = new Object[] {'a', 'b', null, null, false, 'c', null};
+		Object[] output = {'a', 'b', false, 'c'};
+		assertArrayEquals(output, qSolver.removeNullsFromArray(input));
+	}
+	
 
 }

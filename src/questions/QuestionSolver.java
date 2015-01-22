@@ -34,7 +34,6 @@ public class QuestionSolver {
 			char[] vowels = {'a', 'e', 'i', 'o', 'u'};
 			
 			if (new String(vowels).indexOf((input[i].charAt(0))) >= 0) {
-				System.out.println(input[i]);
 				aElements.add(input[i]);
 				
 			}
@@ -46,5 +45,23 @@ public class QuestionSolver {
 		
 		return output;
 		
+	}
+
+	public Object[] removeNullsFromArray(Object[] input) {
+		
+		ArrayList<Object> nonNulls = new ArrayList<Object> ();
+		
+		for(int i = 0; i < input.length; i++) {
+			
+			if(input[i] != null) {
+				nonNulls.add(input[i]);
+			}
+			
+		}
+		Object[] output = new Object[nonNulls.size()];
+		
+		output = nonNulls.toArray(output);
+		
+		return output;
 	}
 }
