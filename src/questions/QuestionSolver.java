@@ -19,33 +19,26 @@ public class QuestionSolver {
 			}
 			
 		}
-		String[] output = new String[aElements.size()];
-		
-		output = aElements.toArray(output);
-		
-		return output;
+		return listToStringArray(aElements, aElements.size());
 		
 	}
 
 	public String[] selectElementsStartingWithVowel(String[] input) {
 		
-		ArrayList<String> aElements = new ArrayList<String> (); 
+		ArrayList<String> vowelElements = new ArrayList<String> (); 
 		
 		for(int i = 0; i < input.length; i++) 
 		{
 			char[] vowels = {'a', 'e', 'i', 'o', 'u'};
 			
 			if (new String(vowels).indexOf((input[i].charAt(0))) >= 0) {
-				aElements.add(input[i]);
+				vowelElements.add(input[i]);
 				
 			}
 			
 		}
-		String[] output = new String[aElements.size()];
 		
-		output = aElements.toArray(output);
-		
-		return output;
+		return listToStringArray(vowelElements, vowelElements.size());
 		
 	}
 
@@ -145,9 +138,7 @@ public class QuestionSolver {
 				}
 				
 			}
-			
-			String[] combo = new String[oneCombination.size()];
-			combo = oneCombination.toArray(combo);
+			String[] combo = listToStringArray(oneCombination, oneCombination.size());
 			listOfArrays.add(combo);
 		}
 		
@@ -168,5 +159,22 @@ public class QuestionSolver {
 		output = numbers.toArray(output);
 		
 		return output;
+	}
+
+	public Integer[] AddElementToBeginningOfArray(Integer[] input1,
+			Integer input2) {
+		ArrayList<Integer> numbers = new ArrayList<Integer>(Arrays.asList(input1));
+		// Adds at index 0
+		numbers.add(0, input2);
+		Integer[] output = new Integer[numbers.size()];
+		output = numbers.toArray(output);
+		return output;
+	}
+	
+	public String[] listToStringArray(ArrayList<String> list, int size ) {
+		String[] array = new String[size];
+		array = list.toArray(array);
+		return array;
+		
 	}
 }

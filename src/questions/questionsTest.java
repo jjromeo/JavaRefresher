@@ -57,4 +57,12 @@ public class questionsTest {
 		Integer[] output = {4, 5, 6, 7};
 		assertArrayEquals(output, qSolver.allElementsExceptFirst3(input));
 	}
+	
+	@Test
+	public void AddElementToBeginningOfArray() {
+		Integer[] input1 = {2, 3, 4, 5};
+		Integer input2 = 1;
+		Integer[] output = {1, 2, 3, 4, 5};
+		assertArrayEquals(output, qSolver.AddElementToBeginningOfArray(input1, input2));
+	}
 }
