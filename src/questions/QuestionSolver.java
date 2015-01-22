@@ -64,4 +64,26 @@ public class QuestionSolver {
 		
 		return output;
 	}
+
+	public Character[] removeNullsAndFalseFromArray(Object[] input) {
+		
+		ArrayList<Object> chars = new ArrayList<Object> ();
+		
+		for(int i = 0; i < input.length; i++) {
+			
+			if(input[i] instanceof Character ) {
+				
+				chars.add(input[i]);
+				
+			}
+			
+		}
+		
+		Character[] output = new Character[chars.size()];
+		
+		output = chars.toArray(output);
+		
+		return output;
+		
+	}
 }

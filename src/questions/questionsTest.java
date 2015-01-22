@@ -30,5 +30,10 @@ public class questionsTest {
 		assertArrayEquals(output, qSolver.removeNullsFromArray(input));
 	}
 	
-
+	@Test
+	public void removeNullsAndFalseFromArray() {
+		Object[] input = new Object[] {'a', 'b', null, null, false, 'c', null};
+		Character[] output = {'a', 'b', 'c'};
+		assertArrayEquals(output, qSolver.removeNullsAndFalseFromArray(input));
+	}
 }
