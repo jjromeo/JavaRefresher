@@ -36,4 +36,11 @@ public class questionsTest {
 		Character[] output = {'a', 'b', 'c'};
 		assertArrayEquals(output, qSolver.removeNullsAndFalseFromArray(input));
 	}
+	
+	@Test
+	public void reverseEveryElementInArray() {
+		String[] input = {"dog", "monkey", "elephant"};
+		String[] output = {"god", "yeknom", "tnahpele"};
+		assertArrayEquals(output, qSolver.reverseEveryElementInArray(input));
+	}
 }

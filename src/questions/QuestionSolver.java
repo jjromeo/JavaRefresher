@@ -86,4 +86,38 @@ public class QuestionSolver {
 		return output;
 		
 	}
+
+	public Object[] reverseEveryElementInArray(String[] input) {
+		
+		ArrayList<String> words = new ArrayList<String> ();
+		
+		// loop over each word in array
+		for(int i = 0; i < input.length; i++) {
+			
+			// Split each word into array of its characters 
+			String[] characters = input[i].split("");
+			ArrayList<String> charsList = new ArrayList<String> ();
+			
+			// reverse loop, putting each char into an arraylist backwards
+			for(int j = characters.length - 1; j > 0; j--) {
+				
+				charsList.add(characters[j]);	
+			}
+			
+			String word = "";
+			// Concatenating each character into a word
+			for(int k = 0; k < charsList.size(); k++){
+				word += charsList.get(k);
+			}
+			// adding each word to words arraylist
+			words.add(word);
+		}
+		// create string array size based on array size
+		String[] output = new String[words.size()];
+		// Setting output to the words arraylist as an array
+		output = words.toArray(output);
+		
+		return output;
+		
+	}
 }
