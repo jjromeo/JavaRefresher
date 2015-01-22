@@ -9,7 +9,8 @@ public class QuestionSolver {
 		
 		ArrayList<String> aElements = new ArrayList<String> (); 
 		
-		for(int i = 0; i < input.length; i++) {
+		for(int i = 0; i < input.length; i++) 
+		{
 			
 			if (input[i].charAt(0) == 'a') {
 				
@@ -30,7 +31,8 @@ public class QuestionSolver {
 		
 		ArrayList<String> aElements = new ArrayList<String> (); 
 		
-		for(int i = 0; i < input.length; i++) {
+		for(int i = 0; i < input.length; i++) 
+		{
 			char[] vowels = {'a', 'e', 'i', 'o', 'u'};
 			
 			if (new String(vowels).indexOf((input[i].charAt(0))) >= 0) {
@@ -51,7 +53,8 @@ public class QuestionSolver {
 		
 		ArrayList<Object> nonNulls = new ArrayList<Object> ();
 		
-		for(int i = 0; i < input.length; i++) {
+		for(int i = 0; i < input.length; i++) 
+		{
 			
 			if(input[i] != null) {
 				nonNulls.add(input[i]);
@@ -69,7 +72,8 @@ public class QuestionSolver {
 		
 		ArrayList<Object> chars = new ArrayList<Object> ();
 		
-		for(int i = 0; i < input.length; i++) {
+		for(int i = 0; i < input.length; i++) 
+		{
 			
 			if(input[i] instanceof Character ) {
 				
@@ -92,14 +96,16 @@ public class QuestionSolver {
 		ArrayList<String> words = new ArrayList<String> ();
 		
 		// loop over each word in array
-		for(int i = 0; i < input.length; i++) {
+		for(int i = 0; i < input.length; i++) 
+		{
 			
 			// Split each word into array of its characters 
 			String[] characters = input[i].split("");
 			ArrayList<String> charsList = new ArrayList<String> ();
 			
 			// reverse loop, putting each char into an arraylist backwards
-			for(int j = characters.length - 1; j > 0; j--) {
+			for(int j = characters.length - 1; j > 0; j--) 
+			{
 				
 				charsList.add(characters[j]);	
 			}
@@ -119,5 +125,34 @@ public class QuestionSolver {
 		
 		return output;
 		
+	}
+
+	public String[][] everyPossiblePairingOfStudents(String[] input) {
+		//ArrayList of String Arrays for combinations to go into
+		ArrayList<String[]> listOfArrays = new ArrayList<String[]>();
+		
+		//loop over all students
+		for(int i = 0; i < input.length; i++)
+		{
+			//create array list to contain a combination of students that doesn't include the current one
+			ArrayList<String> oneCombination = new ArrayList<String> ();
+			
+			for(int j = 0; j < input.length; j++)
+			{
+				// put all string into oneCombination list unless they are the current string being looped 
+				if (input[j] != input[i]){
+					oneCombination.add(input[j]);	
+				}
+				
+			}
+			
+			String[] combo = new String[oneCombination.size()];
+			combo = oneCombination.toArray(combo);
+			listOfArrays.add(combo);
+		}
+		
+		String[][] output = new String[listOfArrays.size()][];
+		output = listOfArrays.toArray(output);
+		return output;
 	}
 }

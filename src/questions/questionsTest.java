@@ -43,4 +43,13 @@ public class questionsTest {
 		String[] output = {"god", "yeknom", "tnahpele"};
 		assertArrayEquals(output, qSolver.reverseEveryElementInArray(input));
 	}
+	
+	@Test
+	public void everyPossiblePairingOfStudents() {
+		String[] input = {"Bob", "Dave", "Clive"};
+		String[][] output = {{"Dave", "Clive"},{"Bob", "Clive"},{"Bob", "Dave"}};
+		assertArrayEquals(output, qSolver.everyPossiblePairingOfStudents(input));
+	}
+	
+	
 }
